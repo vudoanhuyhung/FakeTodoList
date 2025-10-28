@@ -1,0 +1,44 @@
+<mat-list-item>
+  @if (!isEditing) {
+    <ng-container>
+      <mat-checkbox
+        [checked]="todo.completed"
+        (change)="toggled.emit(todo)"
+        class="todo-checkbox">
+      </mat-checkbox>
+
+      <span [class.completed]="todo.completed" class="todo-text">
+      {{ todo.text }}
+    </span>
+
+      <span class="spacer"></span>
+
+      <button mat-icon-button (click)="startEdit()" aria-label="Edit todo">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="removed.emit(todo.id)" aria-label="Delete todo">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </ng-container>
+  } @else {
+    <ng-container>
+      <mat-form-field appearance="outline" class="edit-field">
+        <input
+          matInput
+          [(ngModel)]="editText"
+          (keyup.enter)="saveEdit()"
+          (keyup.escape)="cancelEdit()"
+          cdkFocusInitial>
+      </mat-form-field>
+
+      <button mat-icon-button color="primary" (click)="saveEdit()" aria-label="Save changes">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button mat-icon-button (click)="cancelEdit()" aria-label="Cancel edit">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </ng-container>
+  }
+
+</mat-list-item>
+<mat-divider></mat-divider>

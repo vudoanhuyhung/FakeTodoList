@@ -1,0 +1,39 @@
+<mat-card class="todo-container">
+  <mat-card-header>
+    <mat-card-title>My To-Do List</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <app-todo-form (todoAdded)="onTodoAdded($event)"></app-todo-form>
+
+    <div class="filter-container">
+      <app-todo-filter (filterChanged)="onFilterChanged($event)"></app-todo-filter>
+    </div>
+
+    @if (filteredTodos$ | async; as todos) {
+      <mat-list>
+        @if (todos.length > 0) {
+          @for (todo of todos; track todo.id) {
+            <app-todo-item
+              [todo]="todo"
+              (toggled)="onTodoToggled($event)"
+              (removed)="onTodoRemoved($event)"
+              (edited)="onTodoEdited($event)">
+            </app-todo-item>
+          }
+        } @else {
+          <div class="empty-state">
+            <mat-icon>check_circle_outline</mat-icon>
+            <p>All clear! No todos to show.</p>
+          </div>
+        }
+      </mat-list>
+    } @else {
+      <div class="spinner-container">
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+      </div>
+    }
+
+  </mat-card-content>
+</mat-card>

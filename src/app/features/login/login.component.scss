@@ -1,0 +1,23 @@
+.full-width {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.error-message {
+  color: red;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Center spinner in button */
+button[mat-raised-button] {
+  min-width: 88px; // Prevent size change on loading
+
+  mat-progress-spinner {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,9 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+span, button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

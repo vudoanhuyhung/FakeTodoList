@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit()" class="todo-form">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>New Todo</mat-label>
+    <input matInput [formControl]="todoControl" placeholder="What needs to be done?">
+    @if (todoControl.hasError('required')) {
+      <mat-error>Text is required</mat-error>
+    }
+    @if (todoControl.hasError('minlength')) {
+      <mat-error>Must be at least 3 characters</mat-error>
+    }
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="todoControl.invalid">
+    <mat-icon>add</mat-icon>
+    Add
+  </button>
+</form>
