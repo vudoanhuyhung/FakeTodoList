@@ -8,8 +8,8 @@
       </mat-checkbox>
 
       <span [class.completed]="todo.completed" class="todo-text">
-      {{ todo.text }}
-    </span>
+        {{ todo.text }}
+      </span>
 
       <span class="spacer"></span>
 
@@ -30,6 +30,8 @@
           (keyup.escape)="cancelEdit()"
           cdkFocusInitial>
       </mat-form-field>
+
+      <span class="spacer"></span>
 
       <button mat-icon-button color="primary" (click)="saveEdit()" aria-label="Save changes">
         <mat-icon>save</mat-icon>
