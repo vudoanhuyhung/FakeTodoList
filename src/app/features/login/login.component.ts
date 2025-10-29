@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
+import { TestIdDirective } from '../../shared/directives/test-id.directive';
 
 // Angular Material Modules
 import { MatCardModule } from '@angular/material/card';
@@ -23,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    TestIdDirective
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'

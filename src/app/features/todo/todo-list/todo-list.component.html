@@ -18,6 +18,7 @@
         @if (todos.length > 0) {
           @for (todo of todos; track todo.id) {
             <app-todo-item
+              testId="todo-item-{{todo.id}}"
               [todo]="todo"
               (toggled)="onTodoToggled($event)"
               (removed)="onTodoRemoved($event)"

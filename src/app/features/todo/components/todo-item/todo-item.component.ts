@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../../models/todo.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // For [(ngModel)]
+import { TestIdDirective } from '../../../../shared/directives/test-id.directive';
 
 // Angular Material Modules
 import { MatListModule } from '@angular/material/list';
@@ -22,7 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    TestIdDirective
   ],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss'

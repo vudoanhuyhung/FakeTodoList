@@ -2,6 +2,7 @@
   @if (!isEditing) {
     <div class="list-item-content">
       <mat-checkbox
+        testId="todo-item-{{todo.id}}-checkbox-completed"
         [checked]="todo.completed"
         (change)="toggled.emit(todo)"
         class="todo-checkbox">
@@ -13,10 +14,10 @@
 
       <span class="spacer"></span>
 
-      <button mat-icon-button (click)="startEdit()" aria-label="Edit todo">
+      <button testId="todo-item-{{todo.id}}-button-edit" mat-icon-button (click)="startEdit()" aria-label="Edit todo">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" (click)="removed.emit(todo.id)" aria-label="Delete todo">
+      <button testId="todo-item-{{todo.id}}-button-delete" mat-icon-button color="warn" (click)="removed.emit(todo.id)" aria-label="Delete todo">
         <mat-icon>delete</mat-icon>
       </button>
     </div>
@@ -24,6 +25,7 @@
     <div class="list-item-content">
       <mat-form-field appearance="outline" class="edit-field">
         <input
+          testId="todo-item-{{todo.id}}-input-edit"
           matInput
           [(ngModel)]="editText"
           (keyup.enter)="saveEdit()"
@@ -33,10 +35,10 @@
 
       <span class="spacer"></span>
 
-      <button mat-icon-button color="primary" (click)="saveEdit()" aria-label="Save changes">
+      <button testId="todo-item-{{todo.id}}-button-save" mat-icon-button color="primary" (click)="saveEdit()" aria-label="Save changes">
         <mat-icon>save</mat-icon>
       </button>
-      <button mat-icon-button (click)="cancelEdit()" aria-label="Cancel edit">
+      <button testId="todo-item-{{todo.id}}-button-cancel" mat-icon-button (click)="cancelEdit()" aria-label="Cancel edit">
         <mat-icon>cancel</mat-icon>
       </button>
     </div>
