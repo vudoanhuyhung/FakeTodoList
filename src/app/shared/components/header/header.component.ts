@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
+import { TestIdDirective } from '../../directives/test-id.directive';
 
 // Angular Material Modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,6 +16,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
+    TestIdDirective
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

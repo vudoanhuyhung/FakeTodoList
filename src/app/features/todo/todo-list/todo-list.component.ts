@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TodoFilter } from '../components/todo-filter/todo-filter.component';
 import { CommonModule } from '@angular/common';
+import { TestIdDirective } from '../../../shared/directives/test-id.directive';
 
 // Child Components
 import { TodoFormComponent } from '../components/todo-form/todo-form.component';
@@ -28,7 +29,8 @@ import { MatIcon } from '@angular/material/icon';
     MatListModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatIcon
+    MatIcon,
+    TestIdDirective
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'

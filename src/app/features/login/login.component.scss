@@ -12,6 +12,11 @@
   font-size: 14px;
 }
 
+mat-card-actions {
+  padding: 8px 16px !important;
+  margin: 0 !important;
+}
+
 /* Center spinner in button */
 button[mat-raised-button] {
   min-width: 88px; // Prevent size change on loading

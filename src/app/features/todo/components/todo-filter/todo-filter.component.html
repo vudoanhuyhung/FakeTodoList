@@ -1,9 +1,10 @@
 <mat-button-toggle-group
+  testId="todo-filter-group"
   (change)="onFilterChange($event)"
   value="all"
   aria-label="Filter Todos">
 
-  <mat-button-toggle value="all">All</mat-button-toggle>
-  <mat-button-toggle value="active">Active</mat-button-toggle>
-  <mat-button-toggle value="completed">Completed</mat-button-toggle>
+  <mat-button-toggle testId="todo-filter-button-all" value="all">All</mat-button-toggle>
+  <mat-button-toggle testId="todo-filter-button-active"  value="active">Active</mat-button-toggle>
+  <mat-button-toggle testId="todo-filter-button-completed"  value="completed">Completed</mat-button-toggle>
 </mat-button-toggle-group>
