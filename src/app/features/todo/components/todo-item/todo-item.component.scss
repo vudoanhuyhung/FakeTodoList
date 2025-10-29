@@ -1,3 +1,9 @@
+.list-item-content {
+  display: flex;
+  align-items: center; /* Center the items vertically */
+  width: 100%; /* Ensure it spans the full width of the mat-list-item content area */
+}
+
 .todo-text {
   margin-left: 16px;
   word-break: break-word;

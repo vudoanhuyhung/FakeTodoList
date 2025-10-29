@@ -1,6 +1,6 @@
 <mat-list-item>
   @if (!isEditing) {
-    <ng-container>
+    <div class="list-item-content">
       <mat-checkbox
         [checked]="todo.completed"
         (change)="toggled.emit(todo)"
@@ -19,9 +19,9 @@
       <button mat-icon-button color="warn" (click)="removed.emit(todo.id)" aria-label="Delete todo">
         <mat-icon>delete</mat-icon>
       </button>
-    </ng-container>
+    </div>
   } @else {
-    <ng-container>
+    <div class="list-item-content">
       <mat-form-field appearance="outline" class="edit-field">
         <input
           matInput
@@ -39,8 +39,6 @@
       <button mat-icon-button (click)="cancelEdit()" aria-label="Cancel edit">
         <mat-icon>cancel</mat-icon>
       </button>
-    </ng-container>
+    </div>
   }
-
 </mat-list-item>
-<mat-divider></mat-divider>
