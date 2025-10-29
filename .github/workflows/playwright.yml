@@ -1,6 +1,5 @@
 name: Playwright Tests
 
-# run when commits are pushed to master and when PRs target master
 on:
   push:
     branches: [ master ]
@@ -25,19 +24,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # This action installs Playwright browsers and recommended system deps
-      - name: Install Playwright browsers & deps
-        uses: microsoft/playwright-github-action@v1
-        with:
-          browsers: chromium,firefox,webkit
+      # ✅ New step — install Playwright browsers AND system dependencies
+      - name: Install Playwright browsers & system deps
+        run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        # Playwright's webServer in playwright.config.ts will build + serve your app
         run: npx playwright test --reporter=list
         env:
           CI: true
 
-      - name: Upload Playwright HTML report (artifact)
+      # Optional: save the HTML report as an artifact
+      - name: Upload Playwright HTML report
         if: always()
         uses: actions/upload-artifact@v4
         with:
