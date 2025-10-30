@@ -1,7 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: 'tests',           // where your tests live
+  testDir: '.',
+  testMatch: [
+    'tests/**/*.{spec,test}.{ts,tsx,js,jsx,mjs,cjs}',
+    'ai-generated-tests/**/*.{spec,test}.{ts,tsx,js,jsx,mjs,cjs}'
+  ],
+
   timeout: 30 * 1000,
   expect: { timeout: 5000 },
   fullyParallel: true,
